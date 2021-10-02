@@ -1,0 +1,10 @@
+<h2 class="total-count">Displaying {{listUsers.length}} users</h2>
+<mat-card role="listitem" *ngFor="let user of listUsers">
+  <mat-card-title class="username">{{ user.name}}</mat-card-title>
+  <div>
+    <a class="action-link" [routerLink]="['edit', user.id]">Edit</a>
+    <a class="action-link" [routerLink]="['view', user.id]">View</a>
+    <a class="action-link" (click)="deleteUser(user.id)">Delete</a>
+  </div>
+
+</mat-card>

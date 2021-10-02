@@ -1,0 +1,26 @@
+.username {
+  min-width: 200px;
+}
+.action-link {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.total-count {
+  padding-top: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+mat-card::ng-deep {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+
+  .mat-card-title {
+    flex: auto;
+    margin-bottom: 0;
+  }
+}

@@ -1,21 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListUsersComponent } from './users/list-users/list-users.component';
-import { ListRolesComponent } from './roles/list-roles/list-roles.component';
+import { UsersRoutingModule } from './users/users-routing.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListUsersComponent
+    redirectTo: 'users',
+    pathMatch: 'full'
   },
   {
     path: 'users',
-    component: ListUsersComponent
+    loadChildren: () => UsersRoutingModule
   },
-  {
-    path: 'roles',
-    component: ListRolesComponent
-  }
 ];
 
 @NgModule({
