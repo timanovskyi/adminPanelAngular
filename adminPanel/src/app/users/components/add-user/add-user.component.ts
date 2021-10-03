@@ -11,15 +11,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AddUserComponent implements OnInit {
 
   addUserForm: FormGroup = new FormGroup({});
+
   constructor(private _fb: FormBuilder,
               private _snackBar: MatSnackBar,
-              private _service: UsersService) { }
+              private _service: UsersService) {
+  }
 
   ngOnInit(): void {
     this.addUserForm = this._fb.group({
       'username': new FormControl('', [
-        Validators.required,
-        Validators.min(3)
+          Validators.required
         ]
       ),
       'email': new FormControl('',
@@ -30,7 +31,7 @@ export class AddUserComponent implements OnInit {
       'phone': new FormControl('',
         [
           Validators.required,
-          Validators.min(3)
+          Validators.minLength(5)
         ]),
     })
   }

@@ -1,1 +1,37 @@
-<p>edit-user works!</p>
+<mat-card>
+
+  <mat-card-title *ngIf="this.user">Edit user: {{this.user.username}}</mat-card-title>
+  <mat-card-content *ngIf="showForm">
+    <form [formGroup]="editUserForm" (ngSubmit)="onSubmit($event)">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-error *ngIf="editUserForm.controls['email'].hasError('required')">
+          Field is required
+        </mat-error>
+        <mat-error *ngIf="editUserForm.controls['email'].hasError('email')">
+          Field should be email type
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="Phone" formControlName="phone">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-error *ngIf="editUserForm.controls['phone'].hasError('required')">
+          Field is required
+        </mat-error>
+        <mat-error *ngIf="editUserForm.controls['phone'].hasError('minlength')">
+          Field should be min 5 digit
+        </mat-error>
+      </mat-form-field>
+
+      <p>
+        <button mat-stroked-button color="primary" type="submit" [disabled]="disabledSubmit">Edit user</button>
+      </p>
+    </form>
+  </mat-card-content>
+
+</mat-card>

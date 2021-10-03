@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-list-users',
@@ -9,7 +10,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ListUsersComponent implements OnInit {
 
-  listUsers: any[] = [];
+  displayedColumns: string[] = ['id', 'name', 'username', 'email', 'phone', 'actions'];
+
+  listUsers: User[] = [];
 
   constructor(private _service: UsersService,
               private _snackBar: MatSnackBar,

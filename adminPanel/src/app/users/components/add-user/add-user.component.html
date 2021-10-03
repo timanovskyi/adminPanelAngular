@@ -8,18 +8,33 @@
         <mat-label>User name</mat-label>
         <input matInput placeholder="User name" formControlName="username">
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-error *ngIf="addUserForm.controls['username'].hasError('required')">
+          Field is required
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input matInput placeholder="Email" formControlName="email">
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-error *ngIf="addUserForm.controls['email'].hasError('required')">
+          Field is required
+        </mat-error>
+        <mat-error *ngIf="addUserForm.controls['email'].hasError('email')">
+          Field should be email type
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Phone</mat-label>
         <input matInput placeholder="Phone" formControlName="phone">
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-error *ngIf="addUserForm.controls['phone'].hasError('required')">
+          Field is required
+        </mat-error>
+        <mat-error *ngIf="addUserForm.controls['phone'].hasError('minlength')">
+          Field should be min 5 digit
+        </mat-error>
       </mat-form-field>
 
       <p>

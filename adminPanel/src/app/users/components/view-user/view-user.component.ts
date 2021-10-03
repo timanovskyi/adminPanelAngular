@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-view-user',
@@ -10,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class ViewUserComponent implements OnInit, OnDestroy {
 
-  user: any = null;
+  user: User = {} as User;
 
   private _sub = new Subscription();
 

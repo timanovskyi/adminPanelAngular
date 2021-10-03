@@ -14,6 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
+import { ChangeUpperCasePipe } from './pipes/change-upper-case.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/mater
     ViewUserComponent,
     AddUserComponent,
     EditUserComponent,
+    ChangeUpperCasePipe,
   ],
   imports: [
     CommonModule,
@@ -33,7 +36,8 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/mater
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}}
